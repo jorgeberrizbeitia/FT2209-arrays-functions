@@ -188,3 +188,135 @@ friends.splice(1, 1, "Janice", "Robert", "Iñigo", "Carolina")
 
 console.log("despues del splice", friends)
 
+
+
+// REFERENCIAS
+
+let age1 = 34;
+let age2 = 34;
+
+console.log( age1 === age2 );
+
+// en data primitiva, siempre se analiza el valor neto de la data
+
+let agesArr1 = [10, 14, 52]; // ref. 1234
+let agesArr2 = [10, 14, 52]; // ref. 4567
+
+console.log(agesArr1 === agesArr2) // false
+console.log(agesArr1 == agesArr2) // false
+
+console.log(agesArr1[0] === agesArr2[0]) // true
+
+// en objetos (no primitivo) siempre se analiza la referencia de la data
+// cuando asignamos valores en objectos, se asigna la referencia.
+
+let agesArr3 = agesArr1;
+// agesArr1 => ref. 1234
+// agesArr3 => ref. 1234
+console.log( agesArr3 === agesArr1 ) // true
+
+agesArr3.pop()
+agesArr3.pop()
+agesArr3.pop()
+
+console.log(agesArr3)
+console.log(agesArr1)
+
+
+
+// metodos que nos permiten clonar el array
+let agesArrClone = structuredClone(agesArr1)
+// agesArr1 => ref 1234
+// agesArrClone => ref AWSD
+console.log("agesArrClone",agesArrClone)
+console.log( agesArrClone === agesArr1 )
+
+
+// FUNCIONES
+
+
+// declara una funcion (crearla)
+function myFirstFunction( /* opcionalmente unos parametros*/) {
+  // .todo el codigo de la funcionalidad de la funcion.
+
+  // opcionalmente tendremos un return. que sacara una nuevo valor.
+}
+
+// ejecucion o invocacion de la function.
+myFirstFunction()
+
+
+function printName(name) {
+  // let name = "Jorge"
+  // let parametro = argumento
+  // parametros es lo que personaliza la funcion
+  console.log(`Mi nombre es ${name}`)
+}
+
+
+printName("Jorge") // ejecuta la funcion
+//          |
+//        argumentos
+
+printName("Iñigo")
+printName("Carolina")
+
+
+
+
+// return
+
+function sumNumbers(num1, num2) {
+  let sum = num1 + num2
+  // console.log(sum)
+  // return es, necesito sacar un valor como resultado de esta funcion
+  return sum
+}
+
+let result = sumNumbers(8, 9) // 17
+// que pasa si yo necesito el valor de la suma fuera de la funcion
+
+console.log(`el total de la suma es ${result}`)
+console.log(`el total de la suma es ${sumNumbers(10, 22)}`)
+
+
+
+let listOfTAs = ["iñigo", "carolina"]
+
+console.log( `nuestro excelentes TAs son: ${listOfTAs[0]} y ${listOfTAs[1]}` )
+
+
+function capitalize(string) {
+  let capString = string[0].toUpperCase() + string.slice(1)
+  return capString;
+}
+
+let ta1 = capitalize(listOfTAs[0])
+let ta2 = capitalize(listOfTAs[1])
+
+console.log( `nuestro excelentes TAs son: ${ta1} y ${ta2}` )
+
+
+// TIPOS DE FUNCIONES
+
+// 1. funcion de declaracion.
+function functionDeclaration(parametros) {
+  // codigo
+  return 
+} // ES5-
+
+// 2. funcion de expression.
+const functionExpression = function(parametros) {
+  // codigo
+  return
+} // ES6
+
+// function de flechita
+const arrowFunction = (parametros) => {
+  // codigo
+  return
+} // ES6
+
+functionDeclaration()
+functionExpression()
+arrowFunction()
