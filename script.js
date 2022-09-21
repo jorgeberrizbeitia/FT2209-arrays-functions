@@ -311,7 +311,7 @@ const functionExpression = function(parametros) {
   return
 } // ES6
 
-// function de flechita
+// 3. function de flechita
 const arrowFunction = (parametros) => {
   // codigo
   return
@@ -320,3 +320,93 @@ const arrowFunction = (parametros) => {
 functionDeclaration()
 functionExpression()
 arrowFunction()
+
+
+// EJERCICIO
+
+
+function sinEspacios(word) {
+
+  // console.log(word)
+
+  // for of => iterar sobre todos los caracteres de un str
+
+  let wordNoSpaces = "";
+
+  // for (let char of word) {
+  //   if (char !== " ") {
+  //     // console.log(char)
+  //     wordNoSpaces = wordNoSpaces + char
+  //     // console.log(wordNoSpaces)
+  //   }
+  // }
+
+  for (let char of word) {
+    // clausulas de guardia
+    if (char === " ") {
+      continue
+    }
+    wordNoSpaces = wordNoSpaces + char
+  }
+
+  return wordNoSpaces
+}
+
+// "ba na na ra ma "
+// "bananarama"
+
+console.log( sinEspacios("ba na na ra ma ") ) // "bananarama"
+console.log( sinEspacios("patata     super     ") ) 
+
+
+
+// EJERCICIO 2
+
+// function recibe 2 argumentos
+// 1. un array de vegetales (string)
+// 2. un string de un vegetal
+
+// 1. si no consigue el vegetal en el array me diga: 
+// -  no hay ese vegetal en el array
+// 2. si consigue ese vegetal en el array me diga:
+// - hay X cantidad de (vegetal) en el array
+// 3. si el array está vacio. 
+// - "no hay vegetales, no me engañes! :("
+
+function countVeggies(listOfVeggies, singleVeggie) {
+
+  console.log(listOfVeggies)
+
+  // clausula de guardia
+  if (listOfVeggies.length === 0) {
+    return "no hay vegetales, no me engañes! :("
+    // return hace dos cosas:
+    // 1. le da el valor retornado fuera de la funcion
+    // 2. detiene la ejecucion de la funcion
+  }
+
+  // ... ahora que pasa si si hay vegetales en el array
+
+  let counter = 0;
+
+  for (let i = 0; i < listOfVeggies.length; i++) {
+    if (listOfVeggies[i] === singleVeggie) {
+      // console.log(listOfVeggies[i])
+      counter++
+    }
+  }
+
+  console.log(counter)
+  if (counter === 0) {
+    return "no hay ese vegetal en el array"
+  } else {
+    return `hay ${counter} de ${singleVeggie} en el array`
+  }
+
+}
+
+
+let array = ["tomate", "lechuga", "lechuga", "patata"]
+
+// console.log( countVeggies([], "patata") )
+console.log( countVeggies(array, "pepino") )
