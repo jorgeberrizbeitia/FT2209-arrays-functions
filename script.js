@@ -1,5 +1,7 @@
 console.log("patata");
 
+// * OTROS LOOPS
+
 let palabra = "bananarama";
 
 for (let i = 0; i < palabra.length; i++) {
@@ -40,7 +42,11 @@ do {
   j++;
 } while (j < 0);
 
-// ARRAYS
+
+
+
+
+// * ARRAYS
 
 // ["hola", "adios", 42423, true, undefined, {name: "Luis"}, [[]]]
 
@@ -80,7 +86,9 @@ console.log(lastCharacter);
 
 console.log(cities.slice(-1)[0].slice(-1));
 
-// METODOS DE ARRAY
+
+
+// * METODOS DE ARRAY
 
 // quiero una seccion del array con las tres primeras ciudades.
 // resultado: ["Madrid", "Barcelona", "Huelva"]
@@ -129,7 +137,10 @@ console.log(includesBarcelona); // true
 let includesParis = cities.includes("Paris");
 console.log(includesParis); // false
 
-// MUTABILIDAD
+
+
+
+// * MUTABILIDAD
 
 let str = "hola";
 
@@ -190,7 +201,7 @@ console.log("despues del splice", friends)
 
 
 
-// REFERENCIAS
+// * REFERENCIAS
 
 let age1 = 34;
 let age2 = 34;
@@ -232,7 +243,10 @@ console.log("agesArrClone",agesArrClone)
 console.log( agesArrClone === agesArr1 )
 
 
-// FUNCIONES
+
+
+
+// * FUNCIONES
 
 
 // declara una funcion (crearla)
@@ -264,7 +278,7 @@ printName("Carolina")
 
 
 
-// return
+// palabra return
 
 function sumNumbers(num1, num2) {
   let sum = num1 + num2
@@ -297,7 +311,7 @@ let ta2 = capitalize(listOfTAs[1])
 console.log( `nuestro excelentes TAs son: ${ta1} y ${ta2}` )
 
 
-// TIPOS DE FUNCIONES
+// * TIPOS DE FUNCIONES
 
 // 1. funcion de declaracion.
 function functionDeclaration(parametros) {
@@ -322,8 +336,10 @@ functionExpression()
 arrowFunction()
 
 
-// EJERCICIO
 
+
+
+// * EJERCICIO 1.
 
 function sinEspacios(word) {
 
@@ -360,7 +376,7 @@ console.log( sinEspacios("patata     super     ") )
 
 
 
-// EJERCICIO 2
+// * EJERCICIO 2
 
 // function recibe 2 argumentos
 // 1. un array de vegetales (string)
